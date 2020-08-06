@@ -16,6 +16,7 @@ var db = require('./database/config');    // add
 
 var indexRouter = require('./routes/index');  // add
 var productsRouter = require('./routes/products');  // add
+var clientsRouter = require('./routes/client');  // add
 
 db.connect();     // add
 
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
+app.use('/clients', clientsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
